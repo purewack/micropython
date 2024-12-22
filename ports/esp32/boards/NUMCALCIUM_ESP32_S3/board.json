@@ -13,12 +13,8 @@
         "generic_s3.jpg"
     ],
     "mcu": "esp32s3",
-    "product": "ESP32-S3",
+    "product": "Numcalcium",
     "thumbnail": "",
     "url": "https://www.espressif.com/en/products/modules",
     "vendor": "Espressif",
-    "variants": {
-        "SPIRAM_OCT": "Support for Octal-SPIRAM",
-        "FLASH_4M": "4MiB flash"
-    }
 }

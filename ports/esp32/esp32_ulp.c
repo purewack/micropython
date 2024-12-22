@@ -26,7 +26,8 @@
 
 #include "py/runtime.h"
 
-#if CONFIG_IDF_TARGET_ESP32 || CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3
+
+#if MICROPY_HW_ENABLE_ULP && (CONFIG_IDF_TARGET_ESP32 || CONFIG_IDF_TARGET_ESP32S2 || CONFIG_IDF_TARGET_ESP32S3)
 
 #if CONFIG_IDF_TARGET_ESP32
 #include "esp32/ulp.h"
@@ -41,7 +42,6 @@ typedef struct _esp32_ulp_obj_t {
 } esp32_ulp_obj_t;
 
 const mp_obj_type_t esp32_ulp_type;
-
 // singleton ULP object
 static const esp32_ulp_obj_t esp32_ulp_obj = {{&esp32_ulp_type}};
 

@@ -201,6 +201,11 @@ idf_component_register(
         ${IDF_COMPONENTS}
 )
 
+if(DEFINED ulp_app_name)
+message("ULP APP ${ulp_app_name} ${ulp_riscv_sources} ${ulp_exp_dep_srcs}")
+ulp_embed_binary(${ulp_app_name} "${ulp_riscv_sources}" "${ulp_exp_dep_srcs}")
+endif()
+
 # Set the MicroPython target as the current (main) IDF component target.
 set(MICROPY_TARGET ${COMPONENT_TARGET})
 
