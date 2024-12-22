@@ -87,6 +87,9 @@
 #define MICROPY_GC_SPLIT_HEAP_AUTO          (1)
 
 // extended modules
+#ifndef MICROPY_PY_ULP
+#define MICROPY_PY_ULP                      (1)
+#endif
 #ifndef MICROPY_PY_ESPNOW
 #define MICROPY_PY_ESPNOW                   (1)
 #endif
@@ -217,6 +220,10 @@
 #define MICROPY_HW_USB_VID  (USB_ESPRESSIF_VID)
 #else
 #define MICROPY_HW_USB_VID  (CONFIG_TINYUSB_DESC_CUSTOM_VID)
+#endif
+
+#ifndef MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE
+#define MICROPY_HW_ENABLE_USB_RUNTIME_DEVICE    (1) // Support machine.USBDevice
 #endif
 #endif
 

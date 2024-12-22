@@ -78,6 +78,7 @@ if(MICROPY_PY_TINYUSB)
         ${MICROPY_DIR}/shared/tinyusb/mp_usbd.c
         ${MICROPY_DIR}/shared/tinyusb/mp_usbd_cdc.c
         ${MICROPY_DIR}/shared/tinyusb/mp_usbd_descriptor.c
+        ${MICROPY_DIR}/shared/tinyusb/mp_usbd_runtime.c
     )
 
     list(APPEND MICROPY_INC_TINYUSB
@@ -201,9 +202,12 @@ idf_component_register(
         ${IDF_COMPONENTS}
 )
 
+# If a ULP binary image is to be embedded into the build, you can define the
+# appropriate variables to have ESP-IDF build it for your board using your
+# mpconfigboard.cmake
 if(DEFINED ulp_app_name)
-message("ULP APP ${ulp_app_name} ${ulp_riscv_sources} ${ulp_exp_dep_srcs}")
-ulp_embed_binary(${ulp_app_name} "${ulp_riscv_sources}" "${ulp_exp_dep_srcs}")
+message("ULP embedded APP: ${ulp_app_name} ${ulp_sources} ${ulp_exp_dep_srcs}")
+ulp_embed_binary(${ulp_app_name} "${ulp_sources}" "${ulp_exp_dep_srcs}")
 endif()
 
 # Set the MicroPython target as the current (main) IDF component target.
