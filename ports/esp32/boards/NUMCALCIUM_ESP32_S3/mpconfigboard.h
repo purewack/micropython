@@ -9,9 +9,9 @@ void NUMCALCIUM_board_init(void);
 
 // Enable UART REPL for modules that have an external USB-UART and don't use native USB.
 #define MICROPY_HW_ENABLE_UART_REPL         (0)
-#define MICROPY_HW_ENABLE_ULP               (0)
+#define MICROPY_PY_ULP                      (0)
 
 #define MICROPY_HW_I2C0_SCL                 (9)
 #define MICROPY_HW_I2C0_SDA                 (8)
 
-#define MICROPY_HW_MODTEST (1) 
+#define MICROPY_HW_MODTEST                  (1)

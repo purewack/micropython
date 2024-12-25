@@ -22,5 +22,5 @@ set(MICROPY_SOURCE_BOARD
 set(MICROPY_FROZEN_MANIFEST ${MICROPY_BOARD_DIR}/manifest.py)
 
 set(ulp_app_name ulp_io_numcalcium)
-set(ulp_riscv_sources ${MICROPY_BOARD_DIR}/ulp_io/main.c)
+set(ulp_sources ${MICROPY_BOARD_DIR}/ulp_io/main.c)
 set(ulp_exp_dep_srcs "${MICROPY_BOARD_DIR}/cmodules/modio.c ${MICROPY_BOARD_DIR}/board_init.c")
