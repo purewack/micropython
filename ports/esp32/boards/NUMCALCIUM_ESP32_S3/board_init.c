@@ -14,3 +14,7 @@ void NUMCALCIUM_board_init(){
     err = ulp_riscv_run();
     ESP_ERROR_CHECK(err);
 }
+
+void NUMCALCIUM_tx_hook(const char *str, size_t len){
+    
+}

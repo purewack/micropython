@@ -104,6 +104,13 @@ uint32_t mp_hal_get_cpu_freq(void);
 void mp_hal_wake_main_task(void);
 void mp_hal_wake_main_task_from_isr(void);
 
+
+#ifndef MICROPY_BOARD_TX_HOOK
+#define MICROPY_BOARD_TX_HOOK board_tx_hook
+#endif
+
+void board_tx_hook(const char *str, size_t len);
+
 // C-level pin HAL
 #include "py/obj.h"
 #include "driver/gpio.h"
