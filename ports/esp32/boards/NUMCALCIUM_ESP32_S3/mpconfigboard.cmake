@@ -17,6 +17,7 @@ set(MICROPY_SOURCE_BOARD
     ${MICROPY_BOARD_DIR}/board_init.c
     ${MICROPY_BOARD_DIR}/cmodules/modtest.c
     ${MICROPY_BOARD_DIR}/cmodules/modio.c
+    ${MICROPY_BOARD_DIR}/cmodules/modvt100.c
 )
 
 set(MICROPY_FROZEN_MANIFEST ${MICROPY_BOARD_DIR}/manifest.py)

@@ -1,6 +1,7 @@
 #include <py/mpconfig.h>
 #include "ulp_io_numcalcium.h"
 #include "ulp_riscv.h"
+#include "cmodules/modvt100.h"
 
 extern const uint8_t ulp_main_bin_start[] asm("_binary_ulp_io_numcalcium_bin_start");
 extern const uint8_t ulp_main_bin_end[]   asm("_binary_ulp_io_numcalcium_bin_end");
@@ -13,8 +14,11 @@ void NUMCALCIUM_board_init(){
 
     err = ulp_riscv_run();
     ESP_ERROR_CHECK(err);
+
+    lcd_init();
 }
 
 void NUMCALCIUM_tx_hook(const char *str, size_t len){
-    
+    if(lcd.std)
+        lcd_print((unsigned char*)str,len);
 }

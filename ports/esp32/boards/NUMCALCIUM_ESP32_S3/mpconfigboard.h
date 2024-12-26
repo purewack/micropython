@@ -19,3 +19,4 @@ void NUMCALCIUM_tx_hook(const char *str, size_t len);
 #define MICROPY_HW_I2C0_SDA                 (8)
 
 #define MICROPY_HW_MODTEST                  (1)
+#define MICROPY_HW_MODVT100                 (1)
